@@ -1,0 +1,18 @@
+# remove unavailable com.google.doclava doclava 1.0.3
+python3 /usr/share/java-utils/pom_editor.py pom_xpath_remove   "pom:reporting/pom:plugins/pom:plugin[pom:artifactId='maven-javadoc-plugin']/pom:configuration"
+
+python3 /usr/share/java-utils/pom_editor.py pom_xpath_inject   "pom:reporting/pom:plugins/pom:plugin[pom:artifactId='maven-javadoc-plugin']" '
+
+<configuration>
+  <encoding>${project.reporting.outputEncoding}</encoding>
+  <quiet>true</quiet>
+  <source>${javac.src.version}</source>
+</configuration>'
+
+python3 /usr/share/java-utils/pom_editor.py pom_xpath_remove   "pom:build/pom:plugins/pom:plugin[pom:artifactId='maven-javadoc-plugin']/pom:executions"
+
+
+cp -p src/main/resources/META-INF/LICENSE .
+cp -p src/main/resources/META-INF/NOTICE .
+
+python3 /usr/share/java-utils/mvn_file.py : jackson-core
