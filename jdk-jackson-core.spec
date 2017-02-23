@@ -1,6 +1,6 @@
 Name     : jdk-jackson-core
 Version  : 2.7.6
-Release  : 1
+Release  : 2
 URL      : https://github.com/FasterXML/jackson-core/archive/jackson-core-2.7.6.tar.gz
 Source0  : https://github.com/FasterXML/jackson-core/archive/jackson-core-2.7.6.tar.gz
 Summary  : No detailed summary available
